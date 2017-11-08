@@ -103,8 +103,6 @@ class HomeViewController: UIViewController {
             sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
         #endif
         
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

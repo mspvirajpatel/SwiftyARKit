@@ -45,7 +45,7 @@ class ARCubeView: ARSCNView, UIGestureRecognizerDelegate {
             cube = ARCubeNode()
             
             cube.position = SCNVector3(0, -0.1, -0.3)
-            cube.scale = SCNVector3(0.05, 0.05, 0.05)
+            cube.scale = SCNVector3(0.02, 0.02, 0.02)
             
             scene.rootNode.addChildNode(cube)
         }

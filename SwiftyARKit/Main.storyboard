@@ -14,7 +14,7 @@
         <!--Demos-->
         <scene sceneID="tXi-wE-lFN">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="Kj6-Xm-MqX" customClass="ViewController" customModule="VPARkit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="Kj6-Xm-MqX" customClass="ViewController" customModule="SwiftyARKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1om-SJ-FOS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,10 +50,33 @@
                                     <segue destination="8aY-E3-00K" kind="show" id="1OS-7F-QDb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46J-K9-nij">
+                                <rect key="frame" x="0.0" y="401" width="375" height="50"/>
+                                <state key="normal" title="Plane"/>
+                                <connections>
+                                    <segue destination="Kmh-bb-BQK" kind="show" id="LZo-H1-ca4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGN-8e-7DJ">
+                                <rect key="frame" x="10" y="603" width="355" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Viraj">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="ComicSansMS"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="46J-K9-nij" firstAttribute="trailing" secondItem="tza-6M-T3Z" secondAttribute="trailing" id="85b-no-xzI"/>
                             <constraint firstItem="Hcn-Mh-GNy" firstAttribute="leading" secondItem="SKk-GL-Odj" secondAttribute="leading" id="9RE-EX-uYo"/>
+                            <constraint firstItem="46J-K9-nij" firstAttribute="height" secondItem="tza-6M-T3Z" secondAttribute="height" id="9aX-WK-MVO"/>
+                            <constraint firstItem="DGN-8e-7DJ" firstAttribute="leading" secondItem="SKk-GL-Odj" secondAttribute="leading" constant="10" id="BKq-gm-zfW"/>
+                            <constraint firstItem="SKk-GL-Odj" firstAttribute="bottom" secondItem="DGN-8e-7DJ" secondAttribute="bottom" constant="44" id="BT7-F2-1wr"/>
                             <constraint firstItem="EKQ-7F-Hqg" firstAttribute="leading" secondItem="fqZ-jU-bKO" secondAttribute="leading" id="DIX-4W-5J4"/>
                             <constraint firstItem="tza-6M-T3Z" firstAttribute="leading" secondItem="EKQ-7F-Hqg" secondAttribute="leading" id="E2O-TP-P64"/>
                             <constraint firstItem="EKQ-7F-Hqg" firstAttribute="top" secondItem="fqZ-jU-bKO" secondAttribute="bottom" constant="40" id="IFU-aa-2AA"/>
@@ -61,20 +84,26 @@
                             <constraint firstItem="EKQ-7F-Hqg" firstAttribute="trailing" secondItem="fqZ-jU-bKO" secondAttribute="trailing" id="N2V-6M-XWP"/>
                             <constraint firstItem="fqZ-jU-bKO" firstAttribute="top" secondItem="Hcn-Mh-GNy" secondAttribute="bottom" constant="26" id="Opc-ya-w4R"/>
                             <constraint firstItem="EKQ-7F-Hqg" firstAttribute="height" secondItem="fqZ-jU-bKO" secondAttribute="height" id="XB1-8g-5aa"/>
+                            <constraint firstItem="46J-K9-nij" firstAttribute="top" secondItem="tza-6M-T3Z" secondAttribute="bottom" constant="29" id="YRb-QW-Nv5"/>
                             <constraint firstItem="fqZ-jU-bKO" firstAttribute="leading" secondItem="Hcn-Mh-GNy" secondAttribute="leading" id="YnC-fX-x90"/>
                             <constraint firstItem="tza-6M-T3Z" firstAttribute="height" secondItem="EKQ-7F-Hqg" secondAttribute="height" id="bhJ-fb-jlM"/>
                             <constraint firstItem="fqZ-jU-bKO" firstAttribute="trailing" secondItem="Hcn-Mh-GNy" secondAttribute="trailing" id="dCL-tz-cBh"/>
                             <constraint firstItem="SKk-GL-Odj" firstAttribute="trailing" secondItem="Hcn-Mh-GNy" secondAttribute="trailing" id="gg1-c5-Tx4"/>
                             <constraint firstItem="tza-6M-T3Z" firstAttribute="trailing" secondItem="EKQ-7F-Hqg" secondAttribute="trailing" id="i7z-x6-Thv"/>
                             <constraint firstItem="Hcn-Mh-GNy" firstAttribute="top" secondItem="SKk-GL-Odj" secondAttribute="top" id="mZZ-LD-lR1"/>
+                            <constraint firstItem="SKk-GL-Odj" firstAttribute="trailing" secondItem="DGN-8e-7DJ" secondAttribute="trailing" constant="10" id="nMk-vr-4D8"/>
                             <constraint firstItem="Hcn-Mh-GNy" firstAttribute="width" secondItem="1om-SJ-FOS" secondAttribute="width" id="ssr-eD-R3r"/>
                             <constraint firstItem="tza-6M-T3Z" firstAttribute="top" secondItem="EKQ-7F-Hqg" secondAttribute="bottom" constant="42" id="uEn-PJ-nOf"/>
+                            <constraint firstItem="46J-K9-nij" firstAttribute="leading" secondItem="tza-6M-T3Z" secondAttribute="leading" id="zpf-ds-E40"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SKk-GL-Odj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Demos" id="8GD-wV-HWK">
                         <barButtonItem key="backBarButtonItem" title=" " id="hJc-8g-0nD"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myLable" destination="DGN-8e-7DJ" id="pdD-8t-vJh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMJ-MQ-W0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +112,7 @@
         <!--CUBE-->
         <scene sceneID="tL0-Dt-vAD">
             <objects>
-                <viewController restorationIdentifier="ARCubeViewController" storyboardIdentifier="ARCubeViewController" title="CUBE" id="L9J-tO-opA" customClass="ARCubeViewController" customModule="VPARkit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ARCubeViewController" storyboardIdentifier="ARCubeViewController" title="CUBE" id="L9J-tO-opA" customClass="ARCubeViewController" customModule="SwiftyARKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i8B-2j-IJd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +144,7 @@
         <!--ARkit-->
         <scene sceneID="gO0-RL-Jv1">
             <objects>
-                <viewController restorationIdentifier="ShootViewController" storyboardIdentifier="HomeViewController" title="ARkit" id="DLA-le-n36" customClass="HomeViewController" customModule="VPARkit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ShootViewController" storyboardIdentifier="HomeViewController" title="ARkit" id="DLA-le-n36" customClass="HomeViewController" customModule="SwiftyARKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oCB-FS-fQT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -123,7 +152,7 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hJ-OP-CQH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBN-oa-hiw" customClass="SelectableButton" customModule="VPARkit" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBN-oa-hiw" customClass="SelectableButton" customModule="SwiftyARKit" customModuleProvider="target">
                                 <rect key="frame" x="15" y="248.5" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -141,7 +170,7 @@
                                     <action selector="didTapChair:" destination="DLA-le-n36" eventType="touchUpInside" id="8l9-z5-5u6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hub-VY-m6q" customClass="SelectableButton" customModule="VPARkit" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hub-VY-m6q" customClass="SelectableButton" customModule="SwiftyARKit" customModuleProvider="target">
                                 <rect key="frame" x="15" y="318.5" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -159,7 +188,7 @@
                                     <action selector="didTapCandle:" destination="DLA-le-n36" eventType="touchUpInside" id="A52-YL-Zw7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2M-Vh-5Qc" customClass="SelectableButton" customModule="VPARkit" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2M-Vh-5Qc" customClass="SelectableButton" customModule="SwiftyARKit" customModuleProvider="target">
                                 <rect key="frame" x="15" y="388.5" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -290,7 +319,7 @@
         <!--Resize-->
         <scene sceneID="MS7-pR-3vu">
             <objects>
-                <viewController title="Resize" id="UZG-Rw-IJa" customClass="MainViewController" customModule="ARKitProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Resize" id="UZG-Rw-IJa" customClass="MainViewController" customModule="SwiftyARKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="010-jF-Tf0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -756,7 +785,7 @@
         <!--Shoot-->
         <scene sceneID="YQE-Zr-qbS">
             <objects>
-                <viewController restorationIdentifier="ShootViewController" storyboardIdentifier="ShootViewController" title="Shoot" id="8aY-E3-00K" customClass="ShootViewController" customModule="VPARkit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ShootViewController" storyboardIdentifier="ShootViewController" title="Shoot" id="8aY-E3-00K" customClass="ShootViewController" customModule="SwiftyARKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TKF-uD-8Af">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -799,6 +828,22 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="796" y="-743"/>
+        </scene>
+        <!--Plane View Controller-->
+        <scene sceneID="GSu-ER-ZzU">
+            <objects>
+                <viewController storyboardIdentifier="PlaneViewController" id="Kmh-bb-BQK" customClass="PlaneViewController" customModule="SwiftyARKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="2Ha-Pc-MRR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </arscnView>
+                    <connections>
+                        <outlet property="sceneView" destination="2Ha-Pc-MRR" id="dX4-72-fDe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IFe-De-xKA" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-804" y="902"/>
         </scene>
     </scenes>
     <resources>

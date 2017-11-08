@@ -44,6 +44,9 @@
 		824A23961FB1977500E71E74 /* ShootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A23771FB1977500E71E74 /* ShootViewController.swift */; };
 		824A23971FB1977500E71E74 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 824A23781FB1977500E71E74 /* spark.png */; };
 		824A23981FB1977500E71E74 /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 824A23791FB1977500E71E74 /* torpedo.mp3 */; };
+		824A239B1FB1BBF000E71E74 /* PlaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A239A1FB1BBF000E71E74 /* PlaneViewController.swift */; };
+		824A239D1FB1BC1000E71E74 /* PlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A239C1FB1BC1000E71E74 /* PlaneView.swift */; };
+		824A239F1FB1CE0D00E71E74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A239E1FB1CE0D00E71E74 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		824A23771FB1977500E71E74 /* ShootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootViewController.swift; sourceTree = "<group>"; };
 		824A23781FB1977500E71E74 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		824A23791FB1977500E71E74 /* torpedo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedo.mp3; sourceTree = "<group>"; };
+		824A239A1FB1BBF000E71E74 /* PlaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneViewController.swift; sourceTree = "<group>"; };
+		824A239C1FB1BC1000E71E74 /* PlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneView.swift; sourceTree = "<group>"; };
+		824A239E1FB1CE0D00E71E74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 		824A233C1FB196FA00E71E74 /* SwiftyARKit */ = {
 			isa = PBXGroup;
 			children = (
+				824A23991FB1BBCD00E71E74 /* PlaneWithBox */,
 				824A233D1FB196FA00E71E74 /* AppDelegate.swift */,
 				824A23531FB1976200E71E74 /* Models.scnassets */,
 				824A233F1FB196FA00E71E74 /* art.scnassets */,
@@ -128,6 +135,7 @@
 				824A23711FB1977500E71E74 /* SHOOT */,
 				824A23511FB1975800E71E74 /* Main.storyboard */,
 				824A23461FB196FA00E71E74 /* Assets.xcassets */,
+				824A239E1FB1CE0D00E71E74 /* ViewController.swift */,
 				824A23481FB196FA00E71E74 /* LaunchScreen.storyboard */,
 				824A234B1FB196FA00E71E74 /* Info.plist */,
 			);
@@ -206,6 +214,15 @@
 				824A23791FB1977500E71E74 /* torpedo.mp3 */,
 			);
 			path = SHOOT;
+			sourceTree = "<group>";
+		};
+		824A23991FB1BBCD00E71E74 /* PlaneWithBox */ = {
+			isa = PBXGroup;
+			children = (
+				824A239A1FB1BBF000E71E74 /* PlaneViewController.swift */,
+				824A239C1FB1BC1000E71E74 /* PlaneView.swift */,
+			);
+			path = PlaneWithBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824A239F1FB1CE0D00E71E74 /* ViewController.swift in Sources */,
 				824A23961FB1977500E71E74 /* ShootViewController.swift in Sources */,
 				824A23841FB1977500E71E74 /* TextManager.swift in Sources */,
 				824A237C1FB1977500E71E74 /* ARCubeViewController.swift in Sources */,
+				824A239B1FB1BBF000E71E74 /* PlaneViewController.swift in Sources */,
 				824A238A1FB1977500E71E74 /* VirtualObject.swift in Sources */,
 				824A23851FB1977500E71E74 /* Candle.swift in Sources */,
 				824A23831FB1977500E71E74 /* PlaneDebugVisualization.swift in Sources */,
@@ -299,6 +318,7 @@
 				824A23891FB1977500E71E74 /* Vase.swift in Sources */,
 				824A238D1FB1977500E71E74 /* Extensions.swift in Sources */,
 				824A237E1FB1977500E71E74 /* SettingsViewController.swift in Sources */,
+				824A239D1FB1BC1000E71E74 /* PlaneView.swift in Sources */,
 				824A23801FB1977500E71E74 /* Gesture.swift in Sources */,
 				824A237A1FB1977500E71E74 /* ARCubeNode.swift in Sources */,
 				824A23861FB1977500E71E74 /* Chair.swift in Sources */,
