@@ -10,6 +10,100 @@ import Foundation
 import SceneKit
 import UIKit
 import ARKit
+import Vision
+
+public extension CIImage {
+    
+    var rotate: CIImage {
+        get {
+            return self.oriented(UIDevice.current.orientation.cameraOrientation())
+        }
+    }
+}
+
+private extension UIDeviceOrientation {
+    func cameraOrientation() -> CGImagePropertyOrientation {
+        switch self {
+        case .landscapeLeft: return .up
+        case .landscapeRight: return .down
+        case .portraitUpsideDown: return .left
+        default: return .right
+        }
+    }
+}
+
+extension UIColor {
+    static var defaultOrange: UIColor {
+        return UIColor(red: 234 / 256, green: 101 / 256, blue: 0 / 256, alpha: 1)
+    }
+}
+
+extension ARSCNView {
+    
+    /// Determine the vector from the position on the screen.
+    ///
+    /// - Parameter boundingBox: Rect of the face on the screen
+    /// - Returns: the vector in the sceneView
+    func determineWorldCoord(_ boundingBox: CGRect) -> SCNVector3? {
+        let arHitTestResults = self.hitTest(CGPoint(x: boundingBox.midX, y: boundingBox.midY), types: [.featurePoint])
+        
+        // Filter results that are to close
+        if let closestResult = arHitTestResults.filter({ $0.distance > 0.10 }).first {
+            return SCNVector3.positionFromTransform(closestResult.worldTransform)
+        }
+        return nil
+    }
+}
+
+
+extension UIViewController {
+    
+    /// Transform bounding box according to device orientation
+    ///
+    /// - Parameter boundingBox: of the face
+    /// - Returns: transformed bounding box
+    func transformBoundingBox(_ boundingBox: CGRect) -> CGRect {
+        var size: CGSize
+        var origin: CGPoint
+        
+        switch UIDevice.current.orientation {
+        case .landscapeLeft:
+            size = CGSize(width: boundingBox.width * self.view.bounds.height,
+                          height: boundingBox.height * self.view.bounds.width)
+            origin = CGPoint(x: boundingBox.minY * self.view.bounds.width,
+                             y: boundingBox.minX * self.view.bounds.height)
+        case .landscapeRight:
+            size = CGSize(width: boundingBox.width * self.view.bounds.height,
+                          height: boundingBox.height * self.view.bounds.width)
+            origin = CGPoint(x: (1 - boundingBox.maxY) * self.view.bounds.width,
+                             y: (1 - boundingBox.maxX) * self.view.bounds.height)
+        case .portraitUpsideDown:
+            size = CGSize(width: boundingBox.width * self.view.bounds.width,
+                          height: boundingBox.height * self.view.bounds.height)
+            origin = CGPoint(x: (1 - boundingBox.maxX) * self.view.bounds.width,
+                             y: boundingBox.minY * self.view.bounds.height)
+        default:
+            size = CGSize(width: boundingBox.width * self.view.bounds.width,
+                          height: boundingBox.height * self.view.bounds.height)
+            origin = CGPoint(x: boundingBox.minX * self.view.bounds.width,
+                             y: (1 - boundingBox.maxY) * self.view.bounds.height)
+        }
+        
+        return CGRect(origin: origin, size: size)
+    }
+}
+
+extension SCNPlane {
+    
+    func setAndScaleTexture() {
+        guard let material = firstMaterial else { return }
+        material.diffuse.contents = UIImage(named: "grid")
+        material.diffuse.contentsTransform = SCNMatrix4MakeScale(boundingBox.min.x, boundingBox.min.y, 1)
+        material.diffuse.wrapS = .repeat
+        material.diffuse.wrapT = .repeat
+        firstMaterial = material
+    }
+}
 
 public enum Coordinate {
     

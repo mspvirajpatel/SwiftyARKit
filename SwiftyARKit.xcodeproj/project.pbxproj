@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		821D12C61FB338A3004D2219 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821D12C51FB338A3004D2219 /* HeightViewController.swift */; };
+		821D12C81FB33957004D2219 /* CylinderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821D12C71FB33957004D2219 /* CylinderLine.swift */; };
 		824A233E1FB196FA00E71E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A233D1FB196FA00E71E74 /* AppDelegate.swift */; };
 		824A23401FB196FA00E71E74 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 824A233F1FB196FA00E71E74 /* art.scnassets */; };
 		824A23471FB196FA00E71E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824A23461FB196FA00E71E74 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		821D12C51FB338A3004D2219 /* HeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
+		821D12C71FB33957004D2219 /* CylinderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylinderLine.swift; sourceTree = "<group>"; };
 		824A233A1FB196FA00E71E74 /* SwiftyARKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyARKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824A233D1FB196FA00E71E74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		824A233F1FB196FA00E71E74 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		821D12C41FB33893004D2219 /* Height */ = {
+			isa = PBXGroup;
+			children = (
+				821D12C51FB338A3004D2219 /* HeightViewController.swift */,
+				821D12C71FB33957004D2219 /* CylinderLine.swift */,
+			);
+			path = Height;
+			sourceTree = "<group>";
+		};
 		824A23311FB196FA00E71E74 = {
 			isa = PBXGroup;
 			children = (
@@ -124,10 +137,11 @@
 		824A233C1FB196FA00E71E74 /* SwiftyARKit */ = {
 			isa = PBXGroup;
 			children = (
-				824A23991FB1BBCD00E71E74 /* PlaneWithBox */,
+				821D12C41FB33893004D2219 /* Height */,
 				824A233D1FB196FA00E71E74 /* AppDelegate.swift */,
 				824A23531FB1976200E71E74 /* Models.scnassets */,
 				824A233F1FB196FA00E71E74 /* art.scnassets */,
+				824A23991FB1BBCD00E71E74 /* PlaneWithBox */,
 				824A23551FB1977500E71E74 /* Cube */,
 				824A236C1FB1977500E71E74 /* HelperClass */,
 				824A236B1FB1977500E71E74 /* HomeViewController.swift */,
@@ -257,7 +271,7 @@
 				TargetAttributes = {
 					824A23391FB196FA00E71E74 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -307,6 +321,7 @@
 				824A239F1FB1CE0D00E71E74 /* ViewController.swift in Sources */,
 				824A23961FB1977500E71E74 /* ShootViewController.swift in Sources */,
 				824A23841FB1977500E71E74 /* TextManager.swift in Sources */,
+				821D12C61FB338A3004D2219 /* HeightViewController.swift in Sources */,
 				824A237C1FB1977500E71E74 /* ARCubeViewController.swift in Sources */,
 				824A239B1FB1BBF000E71E74 /* PlaneViewController.swift in Sources */,
 				824A238A1FB1977500E71E74 /* VirtualObject.swift in Sources */,
@@ -318,6 +333,7 @@
 				824A23891FB1977500E71E74 /* Vase.swift in Sources */,
 				824A238D1FB1977500E71E74 /* Extensions.swift in Sources */,
 				824A237E1FB1977500E71E74 /* SettingsViewController.swift in Sources */,
+				821D12C81FB33957004D2219 /* CylinderLine.swift in Sources */,
 				824A239D1FB1BC1000E71E74 /* PlaneView.swift in Sources */,
 				824A23801FB1977500E71E74 /* Gesture.swift in Sources */,
 				824A237A1FB1977500E71E74 /* ARCubeNode.swift in Sources */,
@@ -462,12 +478,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QZ65RGJB4X;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y98X8JAPH6;
 				INFOPLIST_FILE = SwiftyARKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mspviraj.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simform.autotrimpro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a09851d-df24-4aea-99fc-0f224b0e0987";
+				PROVISIONING_PROFILE_SPECIFIER = AutoTrimPro_Dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -477,12 +496,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QZ65RGJB4X;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y98X8JAPH6;
 				INFOPLIST_FILE = SwiftyARKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mspviraj.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simform.autotrimpro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a09851d-df24-4aea-99fc-0f224b0e0987";
+				PROVISIONING_PROFILE_SPECIFIER = AutoTrimPro_Dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

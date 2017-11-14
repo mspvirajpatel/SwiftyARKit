@@ -753,8 +753,8 @@ extension MainViewController {
         virtualObject?.removeFromParentNode()
         virtualObject = nil
         
-        addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
-        addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
+        addObjectButton.setImage(#imageLiteral(resourceName: "tron_grid"), for: [])
+        addObjectButton.setImage(#imageLiteral(resourceName: "tron_grid"), for: [.highlighted])
     }
     
     func updateVirtualObjectPosition(_ pos: SCNVector3, _ filterPosition: Bool) {
