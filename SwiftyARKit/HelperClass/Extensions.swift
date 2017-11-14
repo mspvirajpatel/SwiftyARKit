@@ -11,6 +11,80 @@ import SceneKit
 import UIKit
 import ARKit
 import Vision
+extension UIView {
+    
+    // retrieves all constraints that mention the view
+    func getAllConstraints() -> [NSLayoutConstraint] {
+        
+        // array will contain self and all superviews
+        var views = [self]
+        
+        // get all superviews
+        var view = self
+        while let superview = view.superview {
+            views.append(superview)
+            view = superview
+        }
+        
+        // transform views to constraints and filter only those
+        // constraints that include the view itself
+        return views.flatMap({ $0.constraints }).filter { constraint in
+            return constraint.firstItem as? UIView == self ||
+                constraint.secondItem as? UIView == self
+        }
+    }
+    // We could have multiple width constraints:
+    // e.g. two different width constraints with the exact same value,
+    // or a width constraint with a constant value and a width constraint
+    // equal to another view's width
+    func getWidthConstraints() -> [NSLayoutConstraint] {
+        return getAllConstraints().filter( {
+            $0.firstAttribute == .width
+        } )
+    }
+    
+    // Make sure that we are looking at an equality constraint
+    // and that the constraint is not against another view
+    func changeWidth(to value: CGFloat) {
+        
+        getAllConstraints().filter( {
+            $0.firstAttribute == .width &&
+                $0.relation == .equal &&
+                $0.secondAttribute == .notAnAttribute
+        } ).forEach( {$0.constant = value })
+    }
+    
+    // Here I am looking at leading constraints only
+    // We could also filter leadingMargin, left, or leftMargin
+    // Make sure that first item is our view
+    func changeLeading(to value: CGFloat) {
+        getAllConstraints().filter( {
+            $0.firstAttribute == .leading &&
+                $0.firstItem as? UIView == self
+        }).forEach({$0.constant = value})
+    }
+}
+
+extension UIFont {
+    
+    func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
+        let descriptor = self.fontDescriptor.withSymbolicTraits(UIFontDescriptorSymbolicTraits(traits))
+        return UIFont(descriptor: descriptor!, size: 0)
+    }
+    
+    func bold() -> UIFont {
+        return withTraits(traits: .traitBold)
+    }
+    
+    func italic() -> UIFont {
+        return withTraits(traits: .traitItalic)
+    }
+    
+    func boldItalic() -> UIFont {
+        return withTraits(traits: .traitBold, .traitItalic)
+    }
+    
+}
 
 public extension CIImage {
     
